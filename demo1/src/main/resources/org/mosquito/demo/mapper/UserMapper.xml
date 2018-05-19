@@ -4,6 +4,7 @@
     <resultMap id="BaseResultMap" type="org.mosquito.demo.model.User">
         <id column="id" jdbcType="BIGINT" property="id" />
         <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
         <result column="salt" jdbcType="VARCHAR" property="salt" />
         <result column="mobile" jdbcType="VARCHAR" property="mobile" />
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />

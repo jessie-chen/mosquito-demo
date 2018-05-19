@@ -1,8 +1,9 @@
 package org.mosquito.demo.dto;
 
+import org.mosquito.framework.core.model.BaseDto;
+
 import lombok.Getter;
 import lombok.Setter;
-import org.mosquito.framework.core.model.BaseDto;
 
 import java.sql.Timestamp;
 
@@ -10,12 +11,11 @@ import java.sql.Timestamp;
  * 数据传输对象实体
  *
  * @author jcchen
- * @Date 2018-5-18
+ * @Date 2018-5-20
  * 
  */
 @Getter
 @Setter
-//@ToString
 public class UserDto extends BaseDto {
 
     private static final long serialVersionUID = 1L;
@@ -25,6 +25,12 @@ public class UserDto extends BaseDto {
      * 
      */
     private String name;
+
+    /**
+     * 
+     * 
+     */
+    private String password;
 
     /**
      * 

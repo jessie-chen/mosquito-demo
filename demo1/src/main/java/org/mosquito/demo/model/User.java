@@ -1,8 +1,9 @@
 package org.mosquito.demo.model;
 
+import org.mosquito.framework.core.model.BaseModel;
+
 import lombok.Getter;
 import lombok.Setter;
-import org.mosquito.framework.core.model.BaseModel;
 
 import java.sql.Timestamp;
 
@@ -10,7 +11,7 @@ import java.sql.Timestamp;
  * 实体类 数据库表名称：user 
  *
  * @author jcchen
- * @Date 2018-5-18
+ * @Date 2018-5-20
  * 
  */
 @Getter
@@ -25,6 +26,13 @@ public class User extends BaseModel {
      * 数据库字段信息:name VARCHAR(50)
      */
     private String name;
+
+    /**
+     * 
+     * 
+     * 数据库字段信息:password VARCHAR(128)
+     */
+    private String password;
 
     /**
      * 

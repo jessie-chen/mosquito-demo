@@ -1,8 +1,9 @@
 package org.mosquito.demo.query;
 
+import org.mosquito.framework.core.model.BaseQuery;
+
 import lombok.Getter;
 import lombok.Setter;
-import org.mosquito.framework.core.model.BaseQuery;
 
 import java.sql.Timestamp;
 
@@ -10,7 +11,7 @@ import java.sql.Timestamp;
  * 分页查询参数实体
  *
  * @author jcchen
- * @Date 2018-5-18
+ * @Date 2018-5-20
  * 
  */
 @Getter
@@ -24,6 +25,12 @@ public class UserQuery extends BaseQuery {
      * 
      */
     private String name;
+
+    /**
+     * 
+     * 
+     */
+    private String password;
 
     /**
      * 
