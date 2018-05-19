@@ -4,26 +4,26 @@ spring:
   application:
     name: mosquito-demo
 
-  datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/demo?tinyInt1isBit=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull
-    username: jc
-    password: hello
-    hikari:
-      connection-test-query: SELECT 1 FROM DUAL
-      minimum-idle: 3
-      maximum-pool-size: 24
-      pool-name: ${spring.application.name}-CP
-      idle-timeout: 10000
-      leakDetectionThreshold: 2000
-
 #  datasource:
-#    url: jdbc:hsqldb:mem:mydb
-#    username: sa
-#    driver-class-name: org.hsqldb.jdbcDriver
-#    schema: classpath:db/hsqldb/schema.sql
-#    data: classpath:db/hsqldb/data.sql
+#    type: com.zaxxer.hikari.HikariDataSource
+#    driverClassName: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/demo?tinyInt1isBit=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull
+#    username: jc
+#    password: hello
+#    hikari:
+#      connection-test-query: SELECT 1 FROM DUAL
+#      minimum-idle: 3
+#      maximum-pool-size: 24
+#      pool-name: ${spring.application.name}-CP
+#      idle-timeout: 10000
+#      leakDetectionThreshold: 2000
+
+  datasource:
+    url: jdbc:hsqldb:mem:mydb
+    username: sa
+    driver-class-name: org.hsqldb.jdbcDriver
+    schema: classpath:db/hsqldb/schema.sql
+    data: classpath:db/hsqldb/data.sql
 
 # Mybatis相关配置
 mybatis:
@@ -31,7 +31,7 @@ mybatis:
     map-underscore-to-camel-case: true
     default-fetch-size: 100
     default-statement-timeout: 30
-  mapperLocations: classpath*:mosquito/demo/mapper/*.xml
+  mapperLocations: classpath*:org/mosquito/demo/mapper/*.xml
 
 logging:
   level:

@@ -1,17 +1,15 @@
-package mosquito.demo;
+package org.mosquito.demo;
 
-import mosquito.demo.dto.UserDto;
-import mosquito.demo.query.UserQuery;
-import mosquito.demo.service.IUserService;
+import org.mosquito.demo.dto.UserDto;
+import org.mosquito.demo.query.UserQuery;
+import org.mosquito.demo.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import tk.chandsir.mosquito.framework.jdbc.page.Paging;
-
-import java.util.List;
+import org.mosquito.framework.jdbc.page.Paging;
 
 /**
  * Application

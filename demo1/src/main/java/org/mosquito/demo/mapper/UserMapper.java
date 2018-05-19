@@ -1,8 +1,8 @@
-package mosquito.demo.mapper;
+package org.mosquito.demo.mapper;
 
-import mosquito.demo.model.User;
+import org.mosquito.demo.model.User;
 import org.apache.ibatis.annotations.Mapper;
-import tk.chandsir.mosquito.framework.jdbc.mapper.BaseMapper;
+import org.mosquito.framework.jdbc.mapper.BaseMapper;
 
 /**
  * 数据访问接口

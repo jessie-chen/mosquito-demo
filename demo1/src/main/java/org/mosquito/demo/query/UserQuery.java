@@ -1,13 +1,13 @@
-package mosquito.demo.model;
+package org.mosquito.demo.query;
 
 import lombok.Getter;
 import lombok.Setter;
-import tk.chandsir.mosquito.framework.core.model.BaseModel;
+import org.mosquito.framework.core.model.BaseQuery;
 
 import java.sql.Timestamp;
 
 /**
- * 实体类 数据库表名称：user 
+ * 分页查询参数实体
  *
  * @author jcchen
  * @Date 2018-5-18
@@ -15,46 +15,38 @@ import java.sql.Timestamp;
  */
 @Getter
 @Setter
-public class User extends BaseModel {
+public class UserQuery extends BaseQuery {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 
      * 
-     * 数据库字段信息:name VARCHAR(50)
      */
     private String name;
 
     /**
      * 
      * 
-     * 数据库字段信息:salt VARCHAR(128)
      */
     private String salt;
 
     /**
      * 
      * 
-     * 数据库字段信息:mobile VARCHAR(20)
      */
     private String mobile;
 
     /**
      * 
      * 
-     * 数据库字段信息:create_time TIMESTAMP(19)
      */
     private Timestamp createTime;
 
     /**
      * 
      * 
-     * 数据库字段信息:update_time TIMESTAMP(19)
      */
     private Timestamp updateTime;
-
-    public User() {
-    }	
 	
 }

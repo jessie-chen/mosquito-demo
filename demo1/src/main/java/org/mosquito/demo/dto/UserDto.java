@@ -1,8 +1,8 @@
-package mosquito.demo.dto;
+package org.mosquito.demo.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import tk.chandsir.mosquito.framework.core.model.BaseDto;
+import org.mosquito.framework.core.model.BaseDto;
 
 import java.sql.Timestamp;
 
