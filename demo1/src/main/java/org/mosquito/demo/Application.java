@@ -31,17 +31,29 @@ public class Application {
         return args -> {
             System.out.println("fuck..");
 
+            /*
             UserQuery query = new UserQuery();
             query.setStart(1);
             query.setPageSize(5);
             Paging<UserDto> page = userService.search(query);
             System.out.println(page);
+            */
 
             /*
             UserDto cond = new UserDto();
             List<UserDto> list = userService.selectAll(cond);
             System.out.println(list);
             */
+
+            UserDto dto = new UserDto();
+            dto.setName("hello");
+            dto.setMobile("18100001111");
+            dto.setPassword("1111");
+            dto.setSalt("0000");
+            Long ret = userService.insert(dto);
+            System.out.println(ret);
+
+            System.out.println(userService.get(ret));
         };
     }
 

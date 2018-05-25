@@ -48,19 +48,6 @@ public class User extends BaseModel {
      */
     private String mobile;
 
-    /**
-     * 
-     * 
-     * 数据库字段信息:create_time TIMESTAMP(19)
-     */
-    private Timestamp createTime;
-
-    /**
-     * 
-     * 
-     * 数据库字段信息:update_time TIMESTAMP(19)
-     */
-    private Timestamp updateTime;
 
     public User() {
     }	

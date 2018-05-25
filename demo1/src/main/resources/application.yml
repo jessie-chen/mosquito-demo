@@ -36,5 +36,6 @@ mybatis:
 logging:
   level:
     ROOT: INFO
-    tk.chandsir.mosquito.framework: DEBUG
+    org.mosquito.framework: DEBUG
+    org.mosquito.demo: DEBUG
 

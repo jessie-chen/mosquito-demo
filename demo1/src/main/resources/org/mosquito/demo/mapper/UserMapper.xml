@@ -9,6 +9,9 @@
         <result column="mobile" jdbcType="VARCHAR" property="mobile" />
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="creator" jdbcType="VARCHAR" property="creator" />
+        <result column="modifier" jdbcType="VARCHAR" property="modifier" />
+        <result column="deleted" jdbcType="TINYINT" property="deleted" />
     </resultMap>
     <sql id="BaseTable">
         user

@@ -44,16 +44,5 @@ public class UserQuery extends BaseQuery {
      */
     private String mobile;
 
-    /**
-     * 
-     * 
-     */
-    private Timestamp createTime;
-
-    /**
-     * 
-     * 
-     */
-    private Timestamp updateTime;
 	
 }

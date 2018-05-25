@@ -43,17 +43,5 @@ public class UserDto extends BaseDto {
      * 
      */
     private String mobile;
-
-    /**
-     * 
-     * 
-     */
-    private Timestamp createTime;
-
-    /**
-     * 
-     * 
-     */
-    private Timestamp updateTime;
 	
 }
