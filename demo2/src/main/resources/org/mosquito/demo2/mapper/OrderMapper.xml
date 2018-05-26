@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mosquito.demo2.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="org.mosquito.demo2.model.Order">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="payment" jdbcType="INTEGER" property="payment" />
+        <result column="status" jdbcType="INTEGER" property="status" />
+        <result column="address" jdbcType="VARCHAR" property="address" />
+        <result column="creator" jdbcType="VARCHAR" property="creator" />
+        <result column="modifier" jdbcType="VARCHAR" property="modifier" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="deleted" jdbcType="TINYINT" property="deleted" />
+    </resultMap>
+    <sql id="BaseTable">
+        order
+    </sql>
+    <sql id="Alias">
+        o
+    </sql>
+
+
+    <resultMap id="OrderExtResultMap" type="org.mosquito.demo2.model.OrderExt" extends="AliasResultMap">
+        <collection property="items"
+                    ofType="org.mosquito.demo2.model.OrderItem"
+                    resultMap="org.mosquito.demo2.mapper.OrderItemMapper.AliasResultMap" />
+    </resultMap>
+
+    <select id="findListExt" parameterType="org.mosquito.demo2.model.Order" resultMap="OrderExtResultMap">
+        select
+        <include refid="org.mosquito.demo2.mapper.OrderMapper.AliasColumns"/>,
+        <include refid="org.mosquito.demo2.mapper.OrderItemMapper.AliasColumns"/>
+        from order o left join order_item i on o.id = i.order_id and i.deleted = 0
+        <trim prefix="WHERE"  prefixOverrides="AND | OR" >
+            <if test="id != null" >
+                AND id = #{id, jdbcType=BIGINT}
+            </if>
+            <if test="userId != null" >
+                AND user_id = #{userId, jdbcType=INTEGER}
+            </if>
+            <if test="payment != null" >
+                AND payment = #{payment, jdbcType=INTEGER}
+            </if>
+            <if test="status != null" >
+                AND status = #{status, jdbcType=INTEGER}
+            </if>
+            <if test="address != null" >
+                AND address = #{address, jdbcType=VARCHAR}
+            </if>
+            <if test="creator != null" >
+                AND creator = #{creator, jdbcType=VARCHAR}
+            </if>
+            <if test="modifier != null" >
+                AND modifier = #{modifier, jdbcType=VARCHAR}
+            </if>
+            <if test="createTime != null" >
+                AND create_time = #{createTime, jdbcType=TIMESTAMP}
+            </if>
+            <if test="updateTime != null" >
+                AND update_time = #{updateTime, jdbcType=TIMESTAMP}
+            </if>
+            <if test="deleted != null" >
+                AND deleted = #{deleted, jdbcType=TINYINT}
+            </if>
+        </trim>
+    </select>
+
+</mapper>
