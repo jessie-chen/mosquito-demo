@@ -8,7 +8,7 @@ import org.mosquito.demo.dto.UserDto;
  * 业务类接口
  *
  * @author jcchen
- * @Date 2018-5-20
+ * @Date 2018-5-26
  * 
  */
 public interface IUserService extends IBaseService<UserDto, User>{

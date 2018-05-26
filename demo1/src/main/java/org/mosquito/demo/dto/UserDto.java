@@ -5,13 +5,12 @@ import org.mosquito.framework.core.model.BaseDto;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.Timestamp;
 
 /**
  * 数据传输对象实体
  *
  * @author jcchen
- * @Date 2018-5-20
+ * @Date 2018-5-26
  * 
  */
 @Getter

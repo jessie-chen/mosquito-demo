@@ -5,13 +5,12 @@ import org.mosquito.framework.core.model.BaseQuery;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.Timestamp;
 
 /**
  * 分页查询参数实体
  *
  * @author jcchen
- * @Date 2018-5-20
+ * @Date 2018-5-26
  * 
  */
 @Getter
@@ -43,6 +42,5 @@ public class UserQuery extends BaseQuery {
      * 
      */
     private String mobile;
-
 	
 }

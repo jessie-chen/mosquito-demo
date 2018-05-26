@@ -7,13 +7,15 @@
         <result column="password" jdbcType="VARCHAR" property="password" />
         <result column="salt" jdbcType="VARCHAR" property="salt" />
         <result column="mobile" jdbcType="VARCHAR" property="mobile" />
-        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
         <result column="creator" jdbcType="VARCHAR" property="creator" />
         <result column="modifier" jdbcType="VARCHAR" property="modifier" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
         <result column="deleted" jdbcType="TINYINT" property="deleted" />
     </resultMap>
     <sql id="BaseTable">
         user
     </sql>
+    <sql id="Alias"> u </sql>
+
 </mapper>
