@@ -14,9 +14,9 @@ class DemoRunner extends CommandLineRunner {
 
   override def run(args: String*): Unit = {
     println("-------- scala demo runner begin -------")
-//    listAllOrders()
-//    listAllOrderWithItems()
-//    listAllOrderWithItems2()
+    listAllOrders()
+    listAllOrderWithItems()
+    listAllOrderWithItems2()
     test()
 
     println("-------- scala demo runner endx -------")
