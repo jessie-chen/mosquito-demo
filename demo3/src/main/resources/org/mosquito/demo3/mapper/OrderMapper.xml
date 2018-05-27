@@ -21,6 +21,7 @@
     </sql>
 
 
+    <!-- 一对多,关联查询 -->
     <resultMap id="OrderExtResultMap" type="org.mosquito.demo3.model.OrderExt" extends="AliasResultMap">
         <collection property="items"
                     ofType="org.mosquito.demo3.model.OrderItem"
@@ -32,6 +33,45 @@
         <include refid="org.mosquito.demo3.mapper.OrderMapper.AliasColumns"/>,
         <include refid="org.mosquito.demo3.mapper.OrderItemMapper.AliasColumns"/>
         from order o left join order_item i on o.id = i.order_id and i.deleted = 0
+        <trim prefix="WHERE"  prefixOverrides="AND | OR" >
+            <if test="id != null" >
+                AND id = #{id, jdbcType=BIGINT}
+            </if>
+            <if test="userId != null" >
+                AND user_id = #{userId, jdbcType=INTEGER}
+            </if>
+            <if test="payment != null" >
+                AND payment = #{payment, jdbcType=INTEGER}
+            </if>
+            <if test="status != null" >
+                AND status = #{status, jdbcType=INTEGER}
+            </if>
+            <if test="address != null" >
+                AND address = #{address, jdbcType=VARCHAR}
+            </if>
+            <if test="creator != null" >
+                AND creator = #{creator, jdbcType=VARCHAR}
+            </if>
+            <if test="modifier != null" >
+                AND modifier = #{modifier, jdbcType=VARCHAR}
+            </if>
+            <if test="createTime != null" >
+                AND create_time = #{createTime, jdbcType=TIMESTAMP}
+            </if>
+            <if test="updateTime != null" >
+                AND update_time = #{updateTime, jdbcType=TIMESTAMP}
+            </if>
+            <if test="deleted != null" >
+                AND deleted = #{deleted, jdbcType=TINYINT}
+            </if>
+        </trim>
+    </select>
+
+
+    <!-- 返回 scala Seq -->
+    <select id="findListScala" resultMap="BaseResultMap" parameterType="org.mosquito.demo3.model.Order" >
+        select id,user_id,payment,status,address,creator,modifier,create_time,update_time,deleted
+        from order
         <trim prefix="WHERE"  prefixOverrides="AND | OR" >
             <if test="id != null" >
                 AND id = #{id, jdbcType=BIGINT}

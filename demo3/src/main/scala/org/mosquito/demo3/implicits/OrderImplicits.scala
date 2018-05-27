@@ -5,13 +5,14 @@ import org.mosquito.demo3.{model => m}
 import org.mosquito.framework.core.utils.ObjectUtils
 import collection.JavaConverters._
 
-trait Order {
+trait OrderImplicits {
 
-  implicit def model2Dto(model: m.Order) = ObjectUtils.fastCopyAndNew(model, classOf[OrderDto])
-  implicit def modelList2DtoList(list: java.util.List[m.Order]) = ObjectUtils.fastCopyAndNewList(list, classOf[OrderDto])
+  implicit def m2d(model: m.Order) = ObjectUtils.fastCopyAndNew(model, classOf[OrderDto])
+  implicit def ml2dl(list: java.util.List[m.Order]) = ObjectUtils.fastCopyAndNewList(list, classOf[OrderDto])
+  implicit def ml2ds(list: java.util.List[m.Order]): Seq[OrderDto] = ml2dl(list).asScala
 
-  implicit def dto2Model(dto: OrderDto) = ObjectUtils.fastCopyAndNew(dto, classOf[m.Order])
-  implicit def dtoList2ModelList(list: java.util.List[OrderDto]) = ObjectUtils.fastCopyAndNewList(list, classOf[m.Order])
+  implicit def d2m(dto: OrderDto) = ObjectUtils.fastCopyAndNew(dto, classOf[m.Order])
+  implicit def dl2ml(list: java.util.List[OrderDto]) = ObjectUtils.fastCopyAndNewList(list, classOf[m.Order])
 
   implicit def modelExt2DtoExt(model: m.OrderExt) = {
     val dto = ObjectUtils.fastCopyAndNew(model, classOf[OrderExtDto])
@@ -24,4 +25,4 @@ trait Order {
     list.asScala.map(m => modelExt2DtoExt(m)).asJava
 }
 
-object Order extends Order
+object OrderImplicits extends OrderImplicits

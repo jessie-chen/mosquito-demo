@@ -13,9 +13,13 @@ class DemoRunner extends CommandLineRunner {
   private val orderService: IOrderService = null
 
   override def run(args: String*): Unit = {
-    listAllOrders()
-    listAllOrderWithItems()
-    listAllOrderWithItems2()
+    println("-------- scala demo runner begin -------")
+//    listAllOrders()
+//    listAllOrderWithItems()
+//    listAllOrderWithItems2()
+    test()
+
+    println("-------- scala demo runner endx -------")
   }
 
   def listAllOrders(): Unit = {
@@ -28,5 +32,9 @@ class DemoRunner extends CommandLineRunner {
 
   def listAllOrderWithItems2(): Unit = {
     println(orderService.findListExt2(new OrderDto))
+  }
+
+  def test(): Unit = {
+    println(orderService.findListScala(new OrderDto))
   }
 }

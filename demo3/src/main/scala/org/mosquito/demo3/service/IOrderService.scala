@@ -10,4 +10,6 @@ trait IOrderService extends IBaseService[OrderDto, Order] {
   def findListExt(dto: OrderDto): util.List[OrderExtDto]
   def findListExt2(dto: OrderDto): Seq[OrderExtDto]
   def selectAll2(dto: OrderDto): util.List[OrderDto]
+
+  def findListScala(dto: OrderDto): Seq[OrderDto]
 }
