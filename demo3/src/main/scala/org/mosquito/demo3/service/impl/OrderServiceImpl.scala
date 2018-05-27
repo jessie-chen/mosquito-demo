@@ -7,7 +7,7 @@ import org.mosquito.demo3.implicits.OrderImplicits
 import org.mosquito.demo3.mapper.OrderMapper
 import org.mosquito.demo3.model.Order
 import org.mosquito.demo3.service.IOrderService
-import org.mosquito.framework.jdbc.service.BaseServiceAdapterImpl
+import org.mosquito.framework.jdbc.service.{BaseServiceAdapterImpl, ScalaSupport}
 import org.springframework.stereotype.Service
 
 import collection.JavaConverters._

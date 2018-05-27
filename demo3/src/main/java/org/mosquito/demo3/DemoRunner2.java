@@ -20,12 +20,13 @@ public class DemoRunner2 implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        System.out.println("------ java demo runner2 begin ------");
-//
-//        listAllOrders();
-//        workingOnScalaSeq();
-//
-//        System.out.println("------ java demo runner2 end ------");
+        System.out.println("------ java demo runner2 begin ------");
+
+        listAllOrders();
+        workingOnScalaSeq();
+        test();
+
+        System.out.println("------ java demo runner2 end ------");
     }
 
     private void listAllOrders() {
@@ -42,5 +43,11 @@ public class DemoRunner2 implements CommandLineRunner {
         // 会抛出"java.lang.UnsupportedOperationException".
         // 如果想修改list,可以用guava新建一个list.
         System.out.println(list3);
+    }
+
+    private void test() {
+        OrderDto dto = new OrderDto();
+        Seq<OrderDto> seq = orderService.selectAlls(dto);
+        System.out.println(seq);
     }
 }
