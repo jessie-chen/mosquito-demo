@@ -1,0 +1,1 @@
+INSERT INTO user(ID, NAME, PASSWORD, SALT, MOBILE) VALUES (1, 'tom', 'cat', 'xxx', '18112345678');
