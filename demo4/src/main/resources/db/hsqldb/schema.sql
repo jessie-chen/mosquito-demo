@@ -1,0 +1,11 @@
+DROP TABLE user IF EXISTS ;
+
+CREATE TABLE user (
+  id   INTEGER IDENTITY PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  password VARCHAR(128) NOT NULL ,
+  salt VARCHAR(128) NOT NULL ,
+  mobile VARCHAR(20)
+);
+
+CREATE INDEX user_name ON user (name);

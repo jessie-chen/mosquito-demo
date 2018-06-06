@@ -19,6 +19,14 @@ class DemoRunner extends CommandLineRunner {
 
   override def run(strings: String*): Unit = {
     println(userService.selectAlls(new UserDto))
+
+    val u1 = new UserDto
+    u1.name = "lily"
+    u1.mobile = "13312341111"
+    u1.password = "0000"
+    u1.salt = "1111"
+    val id = userService.insert(u1)
+    println(userService.get(id))
   }
 
 }
